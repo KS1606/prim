@@ -1,0 +1,98 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\KS\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\KS\\source\\repos\\Msg\\Msg\\Msg.csproj",
+      "projectName": "Msg",
+      "projectPath": "C:\\Users\\KS\\source\\repos\\Msg\\Msg\\Msg.csproj",
+      "packagesPath": "C:\\Users\\KS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KS\\source\\repos\\Msg\\Msg\\obj\\",
+      "projectStyle": "PackageReference",
+      "centralPackageVersionsManagementEnabled": true,
+      "configFilePaths": [
+        "C:\\Users\\KS\\NuGet.Config",
+        "C:\\Users\\KS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "centralPackageVersions": {
+          "BluwolfIcons": "[1.0.1, )",
+          "Dragablz": "[0.0.3.223, )",
+          "Humanizer": "[2.14.1, )",
+          "MahApps.Metro": "[2.4.9, )",
+          "Microsoft.CodeAnalysis.Analyzers": "[3.3.3, )",
+          "Microsoft.CodeAnalysis.Common": "[4.2.0, )",
+          "Microsoft.CodeAnalysis.CSharp": "[4.2.0, )",
+          "Microsoft.CodeAnalysis.CSharp.Workspaces": "[4.2.0, )",
+          "Microsoft.CodeAnalysis.Workspaces.Common": "[4.2.0, )",
+          "Microsoft.Composition": "[1.0.31, )",
+          "Microsoft.CSharp": "[4.7.0, )",
+          "Microsoft.NET.Test.Sdk": "[17.2.0, )",
+          "Microsoft.NETCore.Platforms": "[5.0.0, )",
+          "Microsoft.Toolkit.MVVM": "[7.1.2, )",
+          "Newtonsoft.Json": "[13.0.1, )",
+          "Shouldly": "[4.0.3, )",
+          "ShowMeTheXAML": "[2.0.0, )",
+          "ShowMeTheXAML.AvalonEdit": "[2.0.0, )",
+          "ShowMeTheXAML.MSBuild": "[2.0.0, )",
+          "VirtualizingWrapPanel": "[1.5.7, )",
+          "XAMLTest": "[1.0.0-ci264, )",
+          "xunit": "[2.4.1, )",
+          "xunit.runner.visualstudio": "[2.4.5, )",
+          "Xunit.StaFact": "[1.1.11, )"
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+﻿<Window x:Class="Msg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Msg"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/фон.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Добро пожаловать в сетевой чат" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Ink Free" FontSize="24" Foreground="White" FontStyle="Italic" />
+        <TextBlock Grid.Row="1" Text="Введите имя пользователя" VerticalAlignment="Center" Background="{x:Null}" Foreground="White" FontFamily="Bahnschrift Light Condensed" FontSize="24" />
+        <TextBox x:Name="nik" Grid.Row="2" Text="" VerticalAlignment="Center" BorderBrush="#FF6188FF" Background="{x:Null}" Foreground="White" FontFamily="Bahnschrift Light Condensed" FontSize="24" />
+        <TextBlock Grid.Row="3" Text="Введите адресс сети" VerticalAlignment="Center" Background="{x:Null}" Foreground="White" FontFamily="Bahnschrift Light Condensed" FontSize="24" />
+        <TextBox x:Name="ip" Grid.Row="4" Text="" VerticalAlignment="Center" BorderBrush="#FF6188FF" Background="{x:Null}" Foreground="White" FontFamily="Bahnschrift Light Condensed" FontSize="24"/>
+        <Button x:Name="soz" Grid.Row="5" Content="  Создать новый чат  " VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FF8073EA" Foreground="White" FontFamily="Century Gothic" FontSize="30" Click="soz_Click"/>
+        <Button x:Name="pod" Grid.Row="6" Content="  Подключиться  " VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FF8073EA" Foreground="White" FontFamily="Century Gothic" FontSize="30" Click="pod_Click"/>
+    </Grid>
+</Window>
