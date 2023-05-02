@@ -25,11 +25,11 @@ namespace Msg
         public string Name;
         CancellationTokenSource currentOperationTioken;
         Task currentOperation;
-        public Client()
+        public Client(string ip)
         {
             InitializeComponent();
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socket.Connect("26.181.131.190", 8888);
+            socket.Connect(Convert.ToString(ip), 8888);
             RecieveMessage();
         }
 
@@ -54,6 +54,8 @@ namespace Msg
         {
             if (vvod_sms.Text == "/disconnect")
             {
+                string msg = vvod_sms.Text;
+                send("0");
                 disconnect();
             }
             else
@@ -66,6 +68,8 @@ namespace Msg
 
         private void v_Click(object sender, RoutedEventArgs e)
         {
+            string msg = "/disconnect";
+            send("0");
             disconnect();
         }
 

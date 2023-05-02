@@ -30,6 +30,7 @@ namespace Msg
             if((!String.IsNullOrWhiteSpace(nik.Text.ToString())))
             {
                 Server server = new Server();
+                server.Name = nik.Text;
                 server.Show();
                 Close();
             }
@@ -43,7 +44,7 @@ namespace Msg
         {
             if((!String.IsNullOrWhiteSpace(nik.Text.ToString())) && (!String.IsNullOrWhiteSpace(ip.Text.ToString())))
             {
-                Client client = new Client();
+                Client client = new Client(ip.Text);
                 client.Name = nik.Text;
                 client.Show();
                 Close();

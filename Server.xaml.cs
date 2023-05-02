@@ -13,12 +13,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections;
 
 namespace Msg
 {
     public partial class Server : Window
     {
         private Socket socket;
+        public string Name;
         private List<Socket> clints = new List<Socket>();
         public Server()
         {
@@ -38,9 +40,10 @@ namespace Msg
             {
                 var client = await socket.AcceptAsync();
                 clints.Add(client);
-                pol.Items.Add(client.RemoteEndPoint);
+                pol.Items.Add( "Новый пользователь: " + client.RemoteEndPoint + " " + " [ " + DateTime.Now.ToString("dd/MM/yyyy") + "  " + DateTime.Now.ToLongTimeString() + " ] ");
                 RecieveMessage(client);
             }
+
         }
 
         private async Task RecieveMessage(Socket client)
@@ -50,12 +53,21 @@ namespace Msg
                 byte[] bytes = new byte[1024];
                 await client.ReceiveAsync(bytes, SocketFlags.None);
                 string message = Encoding.UTF8.GetString(bytes);
-
-                sms.Items.Add($"[Cообщение от {client.RemoteEndPoint}]: {message}");
-
-                foreach (var item in clints)
+/*                string msg = Convert.ToString("0");
+                MessageBox.Show(Convert.ToString(bytes[0]));
+                MessageBox.Show(message);*/
+                if (bytes[0] == 48 )
                 {
-                    SendMessage(item, message);
+                    pol.Items.Add("Выход пользователя: " + client.RemoteEndPoint + " " + "Время: " + " [ " + DateTime.Now.ToString("dd/MM/yyyy") + "  " + DateTime.Now.ToLongTimeString() + " ] ");
+                }
+                else
+                {
+                    sms.Items.Add(message);
+
+                    foreach (var item in clints)
+                    {
+                        SendMessage(item, message);
+                    }
                 }
             }
         }
@@ -66,12 +78,12 @@ namespace Msg
             await client.SendAsync(bytes, SocketFlags.None);
         }
 
-        private async Task send()
+        private async Task send(string msg)
         {
-            byte[] data = Encoding.UTF8.GetBytes(DateTime.Now.ToLongTimeString());
+            byte[] data = Encoding.UTF8.GetBytes(msg);
             string message = Encoding.UTF8.GetString(data);
 
-            sms.Items.Add($"[Cообщение от {socket.RemoteEndPoint}]: {message}");
+            sms.Items.Add(message);
 
             foreach (var item in clints)
             {
@@ -81,7 +93,15 @@ namespace Msg
 
         private void ot_Click(object sender, RoutedEventArgs e)
         {
-            send();
+            string msg = " [ " + DateTime.Now.ToString("dd/MM/yyyy") + "  " + DateTime.Now.ToLongTimeString() + " ] " + Name + " :" + vvod_sms.Text;
+            send(msg);
+        }
+
+        private void v_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+            Close();
         }
     }
 }
